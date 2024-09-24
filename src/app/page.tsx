@@ -23,7 +23,7 @@ import IconWorld from '@/icons/iconIntegra'
 const navigation = [
   { name: 'Sobre', href: '#sobre' },
   { name: 'Techs', href: '#tech' },
-  { name: 'Cases', href: '#case' },
+  { name: 'Cases', href: '#cases' },
   { name: 'Contato', href: '#contato' },
 ]
 const features = [
@@ -52,33 +52,6 @@ const features = [
     name: 'Armazenamento',
     description: ' de dados seguro e confiável.',
     icon: ServerIcon,
-  },
-]
-const tiers = [
-  {
-    name: 'Hobby',
-    id: 'tier-hobby',
-    href: '#',
-    priceMonthly: '$19',
-    description: "The perfect plan if you're just getting started with our product.",
-    features: ['25 products', 'Up to 10,000 subscribers', 'Advanced analytics', '24-hour support response time'],
-    featured: false,
-  },
-  {
-    name: 'Enterprise',
-    id: 'tier-enterprise',
-    href: '#',
-    priceMonthly: '$49',
-    description: 'Dedicated support and infrastructure for your company.',
-    features: [
-      'Unlimited products',
-      'Unlimited subscribers',
-      'Advanced analytics',
-      'Dedicated support representative',
-      'Marketing automations',
-      'Custom integrations',
-    ],
-    featured: true,
   },
 ]
 const faqs = [
@@ -131,30 +104,40 @@ const faqs = [
     answer: "Nossa abordagem para UX envolve entender as necessidades dos usuários por meio de pesquisa e testes de usabilidade. Buscamos criar uma navegação intuitiva, layouts atraentes e um design que facilite o acesso às informações e serviços que seus visitantes procuram."
   }
 ];
+const cases = [
+  {
+    name: 'Sistema Loja',
+    description: 'Sistema de força de vendas com integração ao Sapiens ERP',
+    image: 'https://rspneus.com.br/wp-content/themes/pneuzao/images/logo-rs-pneus.png',
+  },
+  {
+    name: 'Sistema Loja',
+    description: 'Sistema de força de vendas com integração ao Sapiens ERP',
+    image: 'https://pneuzao.com.br/wp-content/uploads/2023/06/pneuzao-header.png',
+  },
+  {
+    name: 'Passaporte Prime',
+    description: 'Aplicativo de gestão de Passaportes Agro',
+    image: 'https://brasaodopampa.com.br/wp-content/themes/bones/library/images/logotipo.png',
+  }
+]
 const footerNavigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+  sobre: [
+    { name: 'Empresa', href: '#sobre' },
   ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
+  techs: [
+    { name: 'ReactJS', href: 'https://react.dev/' },
+    { name: 'NextJS', href: 'https://nextjs.org' },
+    { name: 'NodeJS', href: 'https://nodejs.org/' },
+    { name: 'Senior ERP', href: 'https://senior.com.br' },
   ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+  cases: [
+    { name: 'RS Pneus', href: 'https://rspneus.com.br/' },
+    { name: 'Pneuzão', href: 'https://pneuzao.com.br/' },
+    { name: 'Brasão do pampa', href: 'https://brasaodopampa.com.br/' },
   ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+  contato: [
+    { name: 'Fale conosco', href: 'https://wa.me/554198436257' },
   ],
 }
 
@@ -193,9 +176,6 @@ export default function Homepage() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            {/* <a href="#" className="text-sm font-semibold leading-6 text-white">
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a> */}
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -248,7 +228,7 @@ export default function Homepage() {
 
       <main>
         {/* Hero section */}
-        <div className="relative isolate overflow-hidden bg-gray-900 pb-16 pt-14 sm:pb-20">
+        <div id='sobre' className="relative isolate overflow-hidden bg-gray-900 pb-16 pt-14 sm:pb-20">
           <img
             alt=""
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
@@ -269,13 +249,6 @@ export default function Homepage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
               <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                {/* <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-                  Announcing our next round of funding.{' '}
-                  <a href="#" className="font-semibold text-white">
-                    <span aria-hidden="true" className="absolute inset-0" />
-                    Read more <span aria-hidden="true">&rarr;</span>
-                  </a>
-                </div> */}
               </div>
               <div className="text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
@@ -361,8 +334,8 @@ export default function Homepage() {
           </div>
         </div>
 
-        {/* Testimonial section */}
-        <div className="relative z-10 mt-32 bg-gray-900 pb-20 sm:mt-56 sm:pb-24 xl:pb-0">
+        {/* Dev section */}
+        {/* <div className="relative z-10 mt-32 bg-gray-900 pb-20 sm:mt-56 sm:pb-24 xl:pb-0">
           <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
             <div className="absolute left-[calc(50%-19rem)] top-[calc(50%-36rem)] transform-gpu blur-3xl">
               <div
@@ -374,7 +347,6 @@ export default function Homepage() {
               />
             </div>
           </div>
-          {/* Grid de desenvolvedores  */}
           <div className='gap-56 flex flex-col'>
 
             <div className="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch">
@@ -452,108 +424,35 @@ export default function Homepage() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Pricing section */}
-        {/* <div className="relative isolate mt-32 bg-white px-6 sm:mt-56 lg:px-8">
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
-          >
-            <div
-              style={{
-                clipPath:
-                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-              }}
-              className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-            />
-          </div>
-          <div className="mx-auto max-w-2xl text-center lg:max-w-4xl">
-            <h2 className="text-base font-semibold leading-7 text-indigo-600">Investimento</h2>
-            <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              O que se adequar no seu bolso, nós temos!
-            </p>
-          </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
-            Entre em contato conosco para saber mais sobre nossos planos e preços.
-          </p>
-          <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
-            {tiers.map((tier, tierIdx) => (
-              <div
-                key={tier.id}
-                className={classNames(
-                  tier.featured ? 'relative bg-gray-900 shadow-2xl' : 'bg-white/60 sm:mx-8 lg:mx-0',
-                  tier.featured
-                    ? ''
-                    : tierIdx === 0
-                      ? 'rounded-t-3xl sm:rounded-b-none lg:rounded-bl-3xl lg:rounded-tr-none'
-                      : 'sm:rounded-t-none lg:rounded-bl-none lg:rounded-tr-3xl',
-                  'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10',
-                )}
-              >
-                <h3
-                  id={tier.id}
-                  className={classNames(
-                    tier.featured ? 'text-indigo-400' : 'text-indigo-600',
-                    'text-base font-semibold leading-7',
-                  )}
-                >
-                  {tier.name}
-                </h3>
-                <p className="mt-4 flex items-baseline gap-x-2">
-                  <span
-                    className={classNames(
-                      tier.featured ? 'text-white' : 'text-gray-900',
-                      'text-5xl font-bold tracking-tight',
-                    )}
-                  >
-                    {tier.priceMonthly}
-                  </span>
-                  <span className={classNames(tier.featured ? 'text-gray-400' : 'text-gray-500', 'text-base')}>
-                    /month
-                  </span>
-                </p>
-                <p
-                  className={classNames(tier.featured ? 'text-gray-300' : 'text-gray-600', 'mt-6 text-base leading-7')}
-                >
-                  {tier.description}
-                </p>
-                <ul
-                  role="list"
-                  className={classNames(
-                    tier.featured ? 'text-gray-300' : 'text-gray-600',
-                    'mt-8 space-y-3 text-sm leading-6 sm:mt-10',
-                  )}
-                >
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
-                      <CheckIcon
-                        aria-hidden="true"
-                        className={classNames(
-                          tier.featured ? 'text-indigo-400' : 'text-indigo-600',
-                          'h-6 w-5 flex-none',
-                        )}
-                      />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={tier.href}
-                  aria-describedby={tier.id}
-                  className={classNames(
-                    tier.featured
-                      ? 'bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500'
-                      : 'text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline-indigo-600',
-                    'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10',
-                  )}
-                >
-                  Get started today
-                </a>
-              </div>
-            ))}
-          </div>
         </div> */}
+        {/* Cases section */}
+        <div id="cases">
+          <div id="cases" className="relative bg-white py-16 sm:py-24 lg:py-32">
+            <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Cases de sucesso
+              </h2>
+              <p className="mt-4 max-w-xl mx-auto text-xl text-gray-600">
+                Aqui estão o alguns cases de sucesso que  já desenvolvemos  para nossos clientes.
+              </p>
+            </div>
+            <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+              {cases.map((caseItem: any) => (
+                <div key={caseItem.name} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                  <div className="flex justify-center">
+                    <img className="h-20 w-1/1.5   object-fill" src={caseItem.image} alt="" />
+                  </div>
+                  <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div className="flex-1">
+                      <p className="text-xl font-semibold text-gray-900">{caseItem.name}</p>
+                      <p className="mt-3 text-base text-gray-600">{caseItem.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Contact form */}
         <div id="contato">
@@ -592,18 +491,13 @@ export default function Homepage() {
         </h2>
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            {/* <img
-              alt="Company name"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              className="h-7"
-            /> */}
             <IconWorld width="120" height="40" />
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white">Sobre</h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.solutions.map((item) => (
+                    {footerNavigation.sobre.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                           {item.name}
@@ -613,9 +507,9 @@ export default function Homepage() {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white">Techs</h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.support.map((item) => (
+                    {footerNavigation.techs.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                           {item.name}
@@ -627,9 +521,9 @@ export default function Homepage() {
               </div>
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white">Cases</h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.company.map((item) => (
+                    {footerNavigation.cases.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                           {item.name}
@@ -639,9 +533,9 @@ export default function Homepage() {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white">Contato</h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.legal.map((item) => (
+                    {footerNavigation.contato.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                           {item.name}
